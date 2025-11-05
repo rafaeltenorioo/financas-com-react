@@ -1,0 +1,49 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+@theme {
+  /* --- Cores Neutras e de Texto Existentes --- */
+  --color-neutra-branco: #ffffff; /* Branco Puro */
+  --color-neutra-fundo-claro: #f8fafc; /* Off-White (Quase branco, levemente acinzentado) */
+  --color-neutra-papel: #fbf8f0; /* Um branco com um toque de bege/amarelo suave */
+  --color-texto-preto: #000000; /* Preto puro */
+  --color-texto-chumbo: #1f2937; /* Cinza Escuro (Chumbo) */
+  --color-texto-chumbo-suave: #374151; /* (Alternativa ao chumbo, mas mais suave) */
+  --color-texto-cinza-medio: #6b7280; /* Cinza Médio */
+  --color-neutra-borda-clara: #cbd5e1; /* Cinza Claríssimo */
+
+  /* --- Paletas de Verde  */
+  --color-primaria-verde: #16a34a; /* Verde Vibrante */
+  --color-primaria-verde-claro: #dcfce7; /* Verde Claríssimo */
+  --color-primaria-verde-hover: #0a7d5c;
+  --color-primaria-verde-escuro: #065f46; /* Verde Escuro*/
+  --color-primaria-verde-escuro-alto-contraste: #052e16; /* Verde Bem Escuro */
+
+  /* --- Paletas de Roxo --- */
+
+  --color-secundaria-roxo-claro: #f3e8ff; /* Lilás Claríssimo */
+  --color-secundaria-roxo-suave: #a78bfa; /* Roxo mais suave */
+  --color-secundaria-roxo-vivo: #7c3aed; /* Roxo Vibrante (Intermediário) */
+  --color-secundaria-roxo: #8b5cf6; /* Roxo Médio */
+  --color-secundaria-roxo-escuro: #5b21b6; /* Roxo Escuro */
+  --color-secundaria-roxo-profundo: #370c79; /* Roxo Bem Escuro */
+  --color-secundaria-roxo-texto: #4c1d95; /* Roxo Escuro para texto */
+
+  /* --- Novas Paletas de Vermelho --- */
+
+  --color-alerta-vermelho-suave: #f87171; /* Vermelho Suave/Tom de Salmão */
+  --color-alerta-vermelho-medio: #ef4444; /* Vermelho de Alerta Padrão */
+  --color-alerta-vermelho-escuro: #b91c1c; /* Vermelho Escuro */
+  --color-alerta-vermelho-profundo: #7f1d1d; /* Vermelho Vinho (Mais Escuro/Profundo) */
+  --color-alerta-vermelho-texto: #991b1b; /* Vermelho Escuro para texto */
+}
+
+* {
+  font-family: "Quicksand", sans-serif;
+}
+html,
+body {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
