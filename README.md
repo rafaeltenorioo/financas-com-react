@@ -8,6 +8,13 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ---
+🔗 **Acesse online:**  
+👉 [financas-com-react.vercel.app](https://financas-com-react.vercel.app/)
+
+<p align='center'>
+  
+  <img src="public/Animação.gif" alt="Descrição da Animação" width="700"/>
+</p>
 
 ## 📖 Sobre o Projeto
 
