@@ -1,4 +1,4 @@
-💰 Finanças com React
+## 💰 Finanças com React
 
 
 ![React](https://img.shields.io/badge/React-19.0-61dafb?logo=react)
@@ -52,7 +52,7 @@ O sistema permite o **gerenciamento de transações mensais**, com **gráficos d
 
 ---
 
-🧩 Estrutura de pastas
+## 🧩 Estrutura de pastas
 src/
 ├── componentes/
 │   ├── BtAdd/                  # Botão de adicionar nova transação
@@ -91,7 +91,7 @@ src/
 
 ---
 
-🧠 Decisões Técnicas
+## 🧠 Decisões Técnicas
 
 Context API em vez de Redux: simplifica o gerenciamento global sem boilerplate.
 
@@ -101,7 +101,7 @@ Atualização periódica via setInterval: garante que o usuário tenha sempre as
 
 Hooks customizados e useMemo / useCallback: utilizados para otimizar cálculos e evitar re-renders desnecessários.
 
-📚 Aprendizados Técnicos
+## 📚 Aprendizados Técnicos
 
 Integração com APIs externas e tratamento de dados.
 
@@ -115,24 +115,24 @@ Estrutura de rotas escalável e responsiva com React Router.
 
 ---
 
-🧩 Como Executar Localmente
+## 🧩 Como Executar Localmente
 
-# Clone o repositório
+ Clone o repositório
 git clone https://github.com/rafaeltenorioo/financas-com-react.git
 
-# Acesse a pasta do projeto
+ Acesse a pasta do projeto
 cd financas-com-react
 
-# Instale as dependências
+ Instale as dependências
 npm install
 
-# Execute o projeto
+ Execute o projeto
 npm run dev
 
 Abra em: http://localhost:5173
 
 
-💡 Ideias para evoluir a aplicação
+## 💡 Ideias para evoluir a aplicação
 
 📊 Mais tipos de gráficos (por categoria, semanal, etc.).
 
@@ -142,29 +142,30 @@ Abra em: http://localhost:5173
 
 🧪 Testes automatizados (Jest + React Testing Library).
 
-👨‍💻 Como contribuir
+## 👨‍💻 Como contribuir
 
 Contribuições são muito bem-vindas!
 Siga os passos abaixo:
 
-# 1. Faça um fork do projeto
-# 2. Crie uma nova branch
+ 1. Faça um fork do projeto
+ 2. Crie uma nova branch
 git checkout -b feature/nova-funcionalidade
 
-# 3. Faça as alterações e commit
+ 3. Faça as alterações e commit
 git commit -m "Adiciona nova funcionalidade"
 
-# 4. Envie para o seu fork
+ 4. Envie para o seu fork
 git push origin feature/nova-funcionalidade
 
-# 5. Abra um Pull Request
+ 5. Abra um Pull Request
 
 
-✨ Autor
+## ✨ Autor
 
-Rafael Araujo Tenorio
+### Rafael Araujo Tenorio
+
 📎 [LinkedIn](https://www.linkedin.com/in/rafael-ten%C3%B3rio-63792927b/)
 
-🧾 Licença
+## 🧾 Licença
 
 Este projeto está sob a licença MIT — sinta-se à vontade para utilizar e modificar.
