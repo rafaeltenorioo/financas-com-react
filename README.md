@@ -1,16 +1,171 @@
-# React + Vite
+## 💰 Finanças com React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+![React](https://img.shields.io/badge/React-19.0-61dafb?logo=react)
+![Vite](https://img.shields.io/badge/Vite-7.1-646CFF?logo=vite)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.1-38B2AC?logo=tailwindcss)
+![MUI](https://img.shields.io/badge/MUI-7.3-007FFF?logo=mui)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 📖 Sobre o Projeto
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Finanças com React** é uma aplicação de controle financeiro pessoal desenvolvida com **React 19**, **Vite**, **Tailwind CSS** e **Material UI (MUI)**.
 
-## Expanding the ESLint configuration
+O sistema permite o **gerenciamento de transações mensais**, com **gráficos dinâmicos**, **filtros por mês**, **conversão de moeda em tempo real via API**, e uma **interface moderna e responsiva**.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+> Este projeto foi criado para consolidar boas práticas de arquitetura front-end, componentização, gerenciamento de estado global e integração com APIs externas.
+
+---
+
+## 🚀 Principais Funcionalidades
+
+- 📅 **Controle de transações mensais**  
+  Visualização e filtragem de despesas por mês, com listagem e somatórios automáticos.
+
+- 💵 **Conversão de moedas em tempo real**  
+  A aplicação consome a API pública [AwesomeAPI](https://economia.awesomeapi.com.br/json/last/USD-BRL,ARS-BRL) para **atualizar automaticamente as taxas de câmbio** entre **BRL**, **USD** e **ARS** a cada 10 minutos.  
+  A lógica é implementada no contexto `CurrencyProvider`, que faz:
+  - Fetch das taxas de câmbio atuais.
+  - Transformação dos dados crus da API.
+  - Armazenamento das taxas no estado global.
+  - Atualização automática com `setInterval`.
+
+- 💹 **Gráficos interativos e responsivos**  
+  Visualização das despesas com gráficos de pizza e linha usando `@mui/x-charts`.
+
+- 🧭 **Rotas otimizadas com React Router v7**  
+  Duas principais rotas:
+  - `/` → Transações mensais
+  - `/visaoGeral` → Dashboard geral
+
+- 🧠 **Gerenciamento global de estado**  
+  Implementado com **React Context API**, organizado em múltiplos providers:
+  - `GastosProvider`
+  - `ModalProvider`
+  - `CurrencyProvider`
+  - `DialogCurrencyProvider`
+
+- ⚙️ **UI moderna e responsiva**  
+  Desenvolvida com **TailwindCSS** e **MUI**, mantendo consistência visual entre desktop e mobile.
+
+---
+
+## 🧩 Estrutura de pastas
+src/
+├── componentes/
+│   ├── BtAdd/                  # Botão de adicionar nova transação
+│   ├── BtChangeCurrency/       # Botão para alterar moeda
+│   ├── Contexts/               # Providers: Gastos, Modal, Currency, DialogCurrency
+│   ├── DialogCurrency/         # Modal de seleção de moeda
+│   ├── Grafico/                # Gráficos de linha
+│   ├── ListaGastosFiltrados/   # Listagem de transações filtradas por mês
+│   ├── MiniListaGastos/        # Lista resumida de gastos
+│   ├── Modal/                  # Modal principal para adicionar gastos
+│   ├── PieChart/               # Gráfico de pizza de distribuição de gastos
+│   ├── SectionDefaultDesktop/  # Layout padrão desktop
+│   ├── SelectedMonth/          # Seletor de mês
+│   ├── TotalValueCard/         # Card com resumo de valores
+│   └── Utils/                  # Funções auxiliares (filtros, formatações etc.)
+│
+├── Routes/
+│   ├── Home/                   # Página de visão geral (gráficos + lista mini)
+│   └── Transacoes/             # Página de transações detalhadas
+│
+├── App.jsx / main.jsx          # Ponto de entrada da aplicação
+├── index.css                   # Estilos globais
+└── vite.config.js              # Configuração do Vite
+
+## ⚡ Tecnologias Utilizadas
+
+| Categoria | Tecnologias |
+|------------|--------------|
+| **Frontend** | React 19, Vite 7 |
+| **UI / Estilo** | TailwindCSS 4, MUI 7 |
+| **Roteamento** | React Router 7 |
+| **Gerenciamento de Estado** | Context API |
+| **Gráficos** | @mui/x-charts |
+| **APIs Externas** | [AwesomeAPI](https://economia.awesomeapi.com.br/json/last/USD-BRL,ARS-BRL) |
+| **Utilitários** | dayjs, lucide-react |
+
+---
+
+## 🧠 Decisões Técnicas
+
+Context API em vez de Redux: simplifica o gerenciamento global sem boilerplate.
+
+Vite + Tailwind + MUI: combinação leve e moderna para produtividade e consistência visual.
+
+Atualização periódica via setInterval: garante que o usuário tenha sempre as cotações atuais sem recarregar a página.
+
+Hooks customizados e useMemo / useCallback: utilizados para otimizar cálculos e evitar re-renders desnecessários.
+
+## 📚 Aprendizados Técnicos
+
+Integração com APIs externas e tratamento de dados.
+
+Uso avançado da Context API com múltiplos providers aninhados.
+
+Estratégias de memoização para otimização de performance.
+
+Combinação de MUI + TailwindCSS para interfaces coesas.
+
+Estrutura de rotas escalável e responsiva com React Router.
+
+---
+
+## 🧩 Como Executar Localmente
+
+ Clone o repositório
+git clone https://github.com/rafaeltenorioo/financas-com-react.git
+
+ Acesse a pasta do projeto
+cd financas-com-react
+
+ Instale as dependências
+npm install
+
+ Execute o projeto
+npm run dev
+
+Abra em: http://localhost:5173
+
+
+## 💡 Ideias para evoluir a aplicação
+
+📊 Mais tipos de gráficos (por categoria, semanal, etc.).
+
+🌓 Suporte a tema claro/escuro.
+
+🔍 Filtros avançados (categoria, faixa de valores).
+
+🧪 Testes automatizados (Jest + React Testing Library).
+
+## 👨‍💻 Como contribuir
+
+Contribuições são muito bem-vindas!
+Siga os passos abaixo:
+
+ 1. Faça um fork do projeto
+ 2. Crie uma nova branch
+git checkout -b feature/nova-funcionalidade
+
+ 3. Faça as alterações e commit
+git commit -m "Adiciona nova funcionalidade"
+
+ 4. Envie para o seu fork
+git push origin feature/nova-funcionalidade
+
+ 5. Abra um Pull Request
+
+
+## ✨ Autor
+
+### Rafael Araujo Tenorio
+
+📎 [LinkedIn](https://www.linkedin.com/in/rafael-ten%C3%B3rio-63792927b/)
+
+## 🧾 Licença
+
+Este projeto está sob a licença MIT — sinta-se à vontade para utilizar e modificar.
